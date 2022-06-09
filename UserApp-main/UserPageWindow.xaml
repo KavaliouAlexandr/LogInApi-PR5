@@ -1,0 +1,57 @@
+﻿<Window x:Class="UserApp.UserPageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserApp"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Users app" Height="700" Width="700">
+    <Grid Background="#ffdadada">
+        <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <Grid Margin="0 0 0 20">
+                    <TextBlock Text="User account" FontSize="30" FontWeight="Bold"/>
+                    <Button HorizontalAlignment="Right" Content="Log out" Click="ButtonLogOutClick" Style="{StaticResource MaterialDesignFlatButton}"/>
+                </Grid>
+                <TextBlock x:Name="hi" Text="Hello, that is your account" Margin="15" TextAlignment="Center" FontWeight="UltraLight" FontSize="18"/>
+                <Grid Margin="40 0 40 0">
+                    <materialDesign:Badged
+                          Badge="{materialDesign:PackIcon TicketConfirmation}"
+                          BadgeColorZoneMode="SecondaryMid">
+                        <Button Content="Show your tickets" Click="ButtonShowBiletsClick" Width="425"/>
+                    </materialDesign:Badged>
+                </Grid>
+                <TextBlock x:Name="nobilets" HorizontalAlignment="Center" TextAlignment="Center"/>
+                <ListView x:Name="listofbilets" Margin="10">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Width="450" Margin="0 0 0 20" HorizontalAlignment="Center">
+                                <TextBlock Text="{Binding From}" Margin="0 0 290 0" TextAlignment="Center" FontSize="15" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding To}" Margin="40 0 0 0" TextAlignment="Center" FontSize="15" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Departure}" Margin="0 17 290 0" TextAlignment="Center"/>
+                                <TextBlock Text="{Binding Arrival}" Margin="40 17 0 0" TextAlignment="Center"/>
+                                <materialDesign:PackIcon Kind="ArrowRightBoldBox" Margin="-125 5 0 0" HorizontalAlignment="Center"/>
+                                <TextBlock Text="{Binding Time}" Margin="-125 19 0 0" HorizontalAlignment="Center"/>
+                                <TextBlock Text="{Binding Type}" Margin="300 4 0 0" FontWeight="Heavy" TextAlignment="Center"/>
+                                <TextBlock Text="Price:" Margin="260 18 0 0" TextAlignment="Center"/>
+                                <TextBlock Text="{Binding Price}" Margin="335 18 0 0" TextAlignment="Center"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Grid Margin="40 0 40 0">
+                    <materialDesign:Badged
+                          Badge="{materialDesign:PackIcon AirplaneSearch}"
+                          BadgeColorZoneMode="SecondaryMid">
+                        <Button Content="Buy new tickets" Click="ButtonBuyClick" Width="425"/>
+                    </materialDesign:Badged>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

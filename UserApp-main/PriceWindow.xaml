@@ -1,0 +1,64 @@
+﻿<Window x:Class="UserApp.PriceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserApp"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Users app" Height="600" Width="600">
+    <Grid Background="#ffdadada">
+        <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <Grid Margin="0 0 0 20">
+                    <TextBlock Text="Available tickets" FontSize="30" FontWeight="Bold"/>
+                    <Button HorizontalAlignment="Right" Content="Back" Click="BackButton" Style="{StaticResource MaterialDesignFlatButton}"/>
+                </Grid>
+                <TextBlock TextAlignment="Center" Text="You selected:" FontSize="17"/>
+                <Grid Margin="0 10 0 0">
+                    <TextBlock x:Name="selectedFrom" Text="KRK Krakow" Margin="0 0 140 0" TextAlignment="Center" FontSize="15" FontWeight="Bold"/>
+                    <TextBlock x:Name="selectedTo" Text="WAW Warsaw" Margin="140 0 0 0" TextAlignment="Center" FontSize="15" FontWeight="Bold"/>
+                    <TextBlock x:Name="selectedDeparture" Text="11:00 18.06.2022" Margin="0 17 140 0" TextAlignment="Center"/>
+                    <TextBlock x:Name="selectedArrival" Text="12:05 18.06.2022" Margin="140 17 0 0" TextAlignment="Center"/>
+                    <materialDesign:PackIcon Kind="ArrowRightBoldBox" Margin="0 11 0 0" HorizontalAlignment="Center"/>
+                </Grid>
+                <TextBlock x:Name="countTickets" Text="Select cabin class:" Margin="0 10" FontSize="17" TextAlignment="Center"/>
+                <Grid Margin="0 10">
+                    <materialDesign:PackIcon Kind="AlphaEBox" />
+                    <TextBlock Margin="15 0 0 0">conom class:</TextBlock>
+                    <TextBlock x:Name="ecoavail" Margin="155 0 0 0" Text="Unavailable"/>
+                    <TextBlock Margin="280 0 0 0">Price:</TextBlock>
+                    <TextBlock x:Name="ecoprice" Margin="320 0 0 0" Text="0$"/>
+                    <Button x:Name="ecobtn" Margin="0,-8,0,8" HorizontalAlignment="Right" IsEnabled="False" Content="Buy" Click="ecobtn_Click"/>
+                </Grid>
+                <Grid Margin="0 10">
+                    <materialDesign:PackIcon Kind="AlphaPBox" />
+                    <TextBlock Margin="15 0 0 0">remium econom:</TextBlock>
+                    <TextBlock x:Name="premavail" Margin="155 0 0 0" Text="Unavailable"/>
+                    <TextBlock Margin="280 0 0 0">Price:</TextBlock>
+                    <TextBlock x:Name="premprice" Margin="320 0 0 0" Text="0$"/>
+                    <Button x:Name="prembtn" Margin="0,-8,0,8" HorizontalAlignment="Right" IsEnabled="False" Content="Buy" Click="prembtn_Click"/>
+                </Grid>
+                <Grid Margin="0 10">
+                    <materialDesign:PackIcon Kind="AlphaBBox"/>
+                    <TextBlock Margin="15 0 0 0">usiness class:</TextBlock>
+                    <TextBlock x:Name="busavail" Margin="155 0 0 0" Text="Unavailable"/>
+                    <TextBlock Margin="280 0 0 0">Price:</TextBlock>
+                    <TextBlock x:Name="busprice" Margin="320 0 0 0" Text="0$"/>
+                    <Button x:Name="busbtn" Margin="0,-8,0,8" HorizontalAlignment="Right" IsEnabled="False" Content="Buy" Click="busbtn_Click"/>
+                </Grid>
+                <Grid Margin="0 10">
+                    <materialDesign:PackIcon Kind="AlphaFBox" />
+                    <TextBlock Margin="15 0 0 0">irst class:</TextBlock>
+                    <TextBlock x:Name="frstavail" Margin="155 0 0 0" Text="Unavailable"/>
+                    <TextBlock Margin="280 0 0 0">Price:</TextBlock>
+                    <TextBlock x:Name="frstprice" Margin="320 0 0 0" Text="0$"/>
+                    <Button x:Name="frstbtn" Margin="0,-8,0,8" HorizontalAlignment="Right" IsEnabled="False" Content="Buy" Click="frstbtn_Click"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
